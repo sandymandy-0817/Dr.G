@@ -1,0 +1,273 @@
+@charset "utf-8";
+
+.slide {
+    width: 100%;
+}
+
+.slide > h2 {
+    display: none;
+}
+
+.slides > li > img {
+    width: 100%;
+}
+
+.con {
+    width: 1200px;
+    margin: 10px auto;
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 10px;
+    margin: 0 auto;
+}
+
+.con > h2 {
+    display: none;
+}
+
+.banner > h2, .story > h2, .ad > h2 {
+    display: none;
+}
+
+.banner img, .story img, .ad img {
+    width: 100%;
+}
+
+.banner {
+    width: 360px;
+    margin: 0 auto;
+}
+
+.story {
+    width: 360px;
+    margin: 0 auto;
+}
+
+/* js를 쓰지 않고도 이미지 변경하는 법
+.bs {
+    display: inline-block;
+    width:100%
+    height:180px;
+}
+
+.story > .bs:hover > img {
+    display:none;
+}
+
+.story > .bs:hover {
+    background:url('../images/mbn0202ov.png') no-repeat;
+    background-size: 100%;
+*/
+
+#bs_img {
+    padding-bottom: 17px;
+}
+
+.ad {
+    width: 360px;
+}
+
+.notice {
+    width: 360px;
+}
+
+.notice > ul {
+    display: grid;
+    grid-template-areas: 
+    "g01 g02"
+    "g03 g04";
+    grid-gap: 10px; /* 그리드 아이템 간의 간격 추가 */
+}
+
+.notice img {
+    width: 100%; /* 이미지가 각 그리드 셀을 가득 채우도록 설정 */
+    object-fit: contain; /* 이미지 비율을 유지하면서 셀에 맞게 조정 */
+}
+
+.notice > ul > li:first-child {
+    grid-area: g01;
+}
+
+.notice > ul > li:nth-child(2) {
+    grid-area: g02;
+}
+
+.notice > ul > li:nth-child(3) {
+    grid-area: g03;
+}
+
+.notice > ul > li:last-child {
+    grid-area: g04;
+}
+
+.store {
+    width: 360px;
+    text-align: center;
+}
+
+.store > ul > li > a > img {
+    width: 100%;
+}
+
+.store h3 {
+    display: none;
+}
+
+.news {
+    width: 360px;
+}
+
+.r_title {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.r_text {
+    font-size: 14px;
+    line-height: 18px;
+    padding-top: 5px;
+}
+
+/*ipad pro*/
+@media screen and (max-width:1024px) and (min-width:768px) {
+    main{
+        padding:0px 1% 50px 1%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .flexslider{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .flexslider .slides {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .flexslider .slides li {
+        display: block;
+    }
+
+    .slides img{
+        height:380px !important;
+        object-fit:cover;/* 높이가 유지되면서 가로가 넘치게 비율 유지할 수 있도록 함 */
+    }
+
+    .con{
+        width:100%;
+        margin:30px auto;
+        display: grid;
+        grid-gap:3%;
+        padding:2%;
+        box-sizing:border-box;
+        /* 그리드 속성을 사용하여 3칸 2줄 만듬 */
+        grid-template-columns:auto;
+        grid-template-areas: 
+        "new ad"
+        "story story"
+        "notice news"
+        "store store"
+        ;
+        overflow:hidden;
+    }
+    
+    .con .banner{grid-area:new;}
+    .con .story{grid-area:story;}
+    .con .ad{grid-area:ad;}
+    .con .notice{grid-area:notice;}
+    .con .store{grid-area:store;}
+    .con .news{grid-area:news;}
+
+    .con .ad img, .con .banner img{
+        width:100%;
+    }
+    
+    .banner, .ad{
+        width:100%;
+        text-align:center;
+    }
+
+    .banner img, .ad img{
+        width:100%;
+    }
+
+    .story{
+        width:100%;
+        text-align:center;
+    }
+
+    .story .bs{
+        width:49.4%;
+        display:inline-block;
+        float:left;
+    }
+
+    .story .fs{
+        width:49.4%;
+        display:inline-block;
+        float:right;
+    }
+
+    .store{margin:0 auto;}
+    
+    /*ipad air*/
+    @media screen and (min-width: 819px) {
+        .notice, .news {
+            width: 410px;
+        }
+    }
+}
+
+@media screen and (max-width:767px) {
+    header{height:76px;}
+
+    /* 모바일 해상도 서식 */
+    main{
+        padding:0px 1.2% 50px 1.2%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .flexslider{height:380px;}
+
+    .slides img{
+        height:380px !important;
+        object-fit:cover;/* 높이가 유지되면서 가로가 넘치게 비율 유지할 수 있도록 함 */
+    }
+
+    .con{
+        width:100%;
+        margin:10px 0px;
+        /* 그리드 속성을 사용하여 3칸 2줄 만듬 */
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(6, auto);
+    }
+
+    .con img{width:100%;}
+
+    .banner, .story, .ad, .notice, .store, .news{width:100%;}
+
+    .store img{width:93%;}
+
+    /*스마트폰이 작은 화면일 경우*/
+    .notice li, .news li{
+        width:320px; /* iphone mini */
+    }
+
+    /*스마트폰이 큰 화면일 경우*/
+    @media screen and (min-width:414px) {
+        .notice li, .news li {
+            width: 414px;
+        }   
+    }
+}

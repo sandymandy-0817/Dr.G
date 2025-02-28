@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+/* 2. table해상도 영역일 경우 변경되는 서식 */
+@media screen and (min-width:768px) and (max-width:1024px) {
+
+.header_inner, .gnb > ul, .f_lnb, address, .sns{
+    width:100%;
+}
+
+#t_btn{
+    display:block;
+    position:absolute;right:10px;top:70px;
+    font-size:2rem;
+}
+.gnb > ul{
+    margin-right:3.8%;
+    transform:translateY(-5px);
+}
+.gnb > ul{width:94%;}
+.gnb > ul > li{
+    margin:0 2.4%;
+    text-align:center;
+}
+
+#toggle:checked + header > .gnb{
+    height:250px;
+}
+
+/* 푸터서식 */
+.f_lnb, address, .sns{
+width:100%;
+}
+.sns{
+transform: translate(-10px, 16px);
+}
+address{padding-left:1%;}
+}

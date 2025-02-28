@@ -1,0 +1,233 @@
+@charset "utf-8";
+
+body {
+    font-family: "Nanum Gothic", serif, arial;
+    font-weight: 400;
+    font-style: normal;
+    font-size:12px;
+    color:#333333;
+}
+a{
+    color:#333333;
+    text-decoration:none;
+}
+
+/* 전체메뉴버튼, 검색 버튼 아이콘에 마우스 오버시 손가락 모양 나오게 한다. */
+label[for=toggle], i.fa-search{
+    cursor: pointer;
+}
+
+/* 체크박스 숨기기 */
+#toggle{display:none;}
+
+.gnb .fa-angle-down{display:none;}
+
+  /* 헤더서식 */
+header{
+    width:100%;
+    position:relative;
+    z-index:1000;
+    height:110px;
+}
+
+.header_inner{
+    width:1200px;height:60px;
+    margin:0 auto;
+}
+
+.h_inner > h1 > a > img {
+    width: 100%;
+}
+
+h1{
+    /*position:absolute;top:30px;left:0px;*/
+    transform:translateY(20px);
+    width:196px;
+}
+
+.lnb{
+    position:absolute;right:10px;top:14px;
+}
+
+.lnb > ul{
+    display:flex;
+}
+
+.lnb a{
+    text-transform:uppercase;
+    font-size:13px;
+    border-right:1px solid #ccc;
+    padding:0px 8px;
+    line-height: 22px;
+}
+
+.lnb li:nth-child(6) a{border:none;}
+
+  /* 검색박스 서식 */
+#sh{
+    border:none;
+    border-bottom:1px solid #ccc;
+    height:24px;
+    text-align:center;
+}
+
+label i.fa-search{
+    font-size:18px;
+    transform:translate(-22px, 2px);
+}
+
+  /* pc버전에서는 닫기(X), 검색버튼 숨기기 */
+label[for=toggle], i.mobile_sh{
+    display:none;
+}
+
+  /* gnb서식 - 2단 내비게이션 */
+.gnb{
+    width:100%;height:40px;
+    background:rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    transition:0.5s;
+}
+
+.gnb:hover{
+    height:260px;
+}
+
+.gnb > ul{
+    width:1200px;
+    margin:0 auto;
+    display:flex;
+    justify-content: right;
+}
+
+.gnb > ul > li{
+    margin:0 3.4%;
+    text-align:center;
+    position:relative; /* .sub의 기준이 된다. */
+}
+
+.gnb > ul > li > a{
+    font-size:16px;
+    padding:0px 6px; /* 반응영역을 넓혀주기 위해 */
+    display:block; /* 크기값을 주기위해 */
+    line-height:40px; /* .gnb와 줄높이를 맞추기 위해 */
+}
+
+.gnb > ul > li > a:hover{
+    color:#ff9900;
+}
+
+.gnb > ul > li > a::after{
+    display:block;
+    content:'';
+    height:2px;
+    background:#ff9900;
+    transform: translateY(-3px) scale(0);
+    transition:0.3s;
+}
+
+.gnb > ul > li > a:hover::after{
+    transform:translateY(-3px) scale(1);
+}
+
+  /* 서브메뉴 서식 */
+.sub a{
+    line-height:36px;
+    display:block;
+    font-size:13px;
+}
+
+.sub a:hover{text-decoration: underline;}
+
+main {
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/*notice, news*/
+.notice .fa-plus, .news .fa-plus {
+    float: right;
+    border: 1px solid #333;
+    padding: 3px 5px;
+    font-size: 0.8rem;
+    transform: translateY(7px);
+    cursor: pointer;
+}
+
+.title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #333;
+    line-height: 40px;
+    padding: 6px 1.2% 0 1.2%;
+    margin-bottom: 10px;
+}
+
+.notice li, .news li {
+    line-height: 30px;
+    text-indent: 10px;
+    overflow: hidden; 
+    text-overflow: ellipsis; /*생략기호*/
+    white-space: nowrap; /*다음줄로 넘기지 않기*/
+}
+
+  /* 푸터서식 */
+footer{
+    width:100%;
+    padding:10px 0px;
+    background:#333;
+    border-top:1px solid #dadada;
+    overflow: hidden;
+    color: #fff;
+    position: relative;
+}
+
+footer > a > img {
+    width: 100px;
+    position: absolute;
+    left: 170px;
+    top: 20px;
+}
+
+.f_lnb, address, .sns{
+    width:1200px;
+    margin:0 auto;
+}
+
+.f_lnb > ul{
+    display:flex;
+    justify-content: left;
+}
+
+.f_lnb > ul > li{
+    margin:0px 10px;
+}
+
+.f_lnb > ul > li > a{
+    line-height:160%;
+    padding: 6px 4px;
+    line-height: 50px;
+}
+
+address > p{
+    line-height:28px;
+}
+
+address div {
+    display: flex;
+    margin: 10px 0px;
+}
+
+address > div > p {
+    padding: 0px 20px;
+    display: inline-block;
+    border-right: 1px solid #ccc;
+}
+
+.sns > ul{
+    display:flex;
+    justify-content:right;
+}
